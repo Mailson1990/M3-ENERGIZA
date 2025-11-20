@@ -375,7 +375,7 @@
         <h2>Serviços</h2>
         <div class="services">
           <article class="service"><h3>Residencial</h3><p>Instalações, tomadas, iluminação, aterramento e manutenção emergencial.</p></article>
-          <article class="service"><h3>Comercial</h3><p>Instalações para lojas e escritórios, quadros elétricos e iluminação técnica.</p></article>
+          <article class="service"><h3>Comercial</h3><p>Instalações para lojas e escritórios, quadros elétricos.</p></article>
           <article class="service"><h3>Projetos</h3><p>Dimensionamento de circuitos, disjuntores e projetos elétricos personalizados.</p></article>
           <article class="service"><h3>Automação</h3><p>Instalação de controles, sensores e integração com assistentes.</p></article>
         </div>
@@ -398,7 +398,7 @@
         <div style="background:var(--card);padding:16px;border-radius:12px;color:var(--muted)">
           <p>Profissional qualificado com experiência em instalações residenciais e comerciais. Foco em segurança, eficiência e atendimento personalizado.</p>
           <ul style="margin-top:8px;">
-            <li>Atendimento com agendamento rápido</li>
+            <li>Atendimento rápido</li>
             <li>Orçamentos transparentes</li>
             <li>Garantia em todos os serviços</li>
           </ul>
@@ -474,24 +474,25 @@
     }
 
     function enviarWhatsApp(e) {
-      e.preventDefault();
-      const nome = document.getElementById('nome').value.trim();
-      const telefone = document.getElementById('telefone').value.trim();
-      const servico = document.getElementById('servico').value;
-      const mensagem = document.getElementById('mensagem').value.trim();
-      const numero = '5511998680448';
+  e.preventDefault();
 
-      const texto = encodeURIComponent(
-        `Olá, sou ${nome}!%0A` +
-        `Telefone: ${telefone || 'não informado'}%0A` +
-        `Serviço: ${servico}%0A` +
-        `Mensagem: ${mensagem || '—'}`
-      );
+  const nome = document.getElementById('nome').value.trim();
+  const telefone = document.getElementById('telefone').value.trim();
+  const servico = document.getElementById('servico').value;
+  const mensagem = document.getElementById('mensagem').value.trim();
+  const numero = '5511998680448';
 
-      window.open(`https://wa.me/${numero}?text=${texto}`, '_blank');
-      e.target.reset();
-    }
+  // Monta o texto com quebras de linha reais (\n) e depois codifica
+  const texto = `Olá, sou ${nome}!\n` +
+                `Telefone: ${telefone || 'não informado'}\n` +
+                `Serviço: ${servico}\n` +
+                `Mensagem: ${mensagem || '—'}`;
 
+  const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+  window.open(url, '_blank');
+
+  e.target.reset();
+}
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
