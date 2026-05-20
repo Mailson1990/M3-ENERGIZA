@@ -1,499 +1,406 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>M3 ENERGIZA</title>
-  <meta name="description" content="Portfólio de serviços elétricos residenciais e comerciais — M3 ENERGIZA" />
-  <style>
-    :root {
-      --bg: #0f1724;
-      --card: #0b1220;
-      --accent: #ffb703;
-      --muted: #94a3b8;
-      --glass: rgba(255, 255, 255, 0.04);
-      --radius: 14px;
-      --maxw: 1100px;
-      --gap: 18px;
-      --ff-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+  <title>M3energiza | Eletricista Residencial</title>
 
-    body {
-      font-family: var(--ff-sans);
-      background: linear-gradient(180deg, #071024 0%, #07162b 100%);
-      color: #e6eef8;
-      line-height: 1.45;
-      overflow-x: hidden;
-    }
+  <meta name="description" content="Eletricista residencial em São Paulo. Instalações elétricas, manutenção, iluminação, chuveiros, tomadas e reformas.">
 
-    .container {
-      max-width: var(--maxw);
-      margin: 32px auto;
-      padding: 24px;
-    }
+  <meta name="keywords" content="eletricista residencial, eletricista em sp, instalação elétrica, manutenção elétrica">
 
-    /* HEADER */
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    .logo img {
-      height: 56px;
-      width: 56px;
-      border-radius: 12px;
-      object-fit: cover;
-      box-shadow: 0 0 10px rgba(255, 183, 3, 0.3);
-    }
-
-    .brand-text h1 {
-      font-size: 18px;
-      margin: 0;
-      color: var(--accent);
-    }
-
-    .brand-text div {
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    nav {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
-
-    nav a {
-      color: var(--muted);
-      text-decoration: none;
-      padding: 8px;
-      border-radius: 8px;
-      transition: 0.25s;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-      background: rgba(255, 183, 3, 0.06);
-    }
-
-    .cta {
-      background: linear-gradient(90deg, var(--accent), #ff8b00);
-      color: #06202b;
-      padding: 8px 12px;
-      border-radius: 10px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    /* BOTÕES DE CONTATO */
-    .contact-buttons {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .contact-buttons a {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 14px;
-      border-radius: 10px;
-      font-weight: 600;
-      transition: all 0.25s ease;
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      font-size: 14px;
-      color: #fff;
-      background: #25d366;
-      box-shadow: 0 0 10px rgba(37, 211, 102, 0.3);
-    }
-
-    .contact-buttons a:hover {
-      background: #20b957;
-      transform: scale(1.05);
-      box-shadow: 0 0 14px rgba(37, 211, 102, 0.4);
-    }
-
-    /* HERO */
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 360px;
-      gap: 28px;
-      align-items: center;
-      margin-top: 28px;
-    }
-
-    .hero-card {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
-      padding: 28px;
-      border-radius: 18px;
-      box-shadow: 0 6px 24px rgba(2, 6, 23, 0.6);
-    }
-
-    .hero h2 {
-      margin-bottom: 8px;
-      font-size: 28px;
-    }
-
-    .hero p {
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .features {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .feat {
-      background: var(--card);
-      padding: 10px 12px;
-      border-radius: 12px;
-      min-width: 140px;
-    }
-
-    /* SEÇÕES */
-    section {
-      margin-top: 32px;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: var(--gap);
-    }
-
-    .service {
-      background: var(--glass);
-      padding: 18px;
-      border-radius: 12px;
-    }
-
-    .service h3 {
-      margin-bottom: 8px;
-    }
-
-    .service p {
-      color: var(--muted);
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 12px;
-    }
-
-    .thumb {
-      position: relative;
-      border-radius: 10px;
-      overflow: hidden;
-      cursor: pointer;
-    }
-
-    .thumb img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.25s;
-    }
-
-    .thumb:hover img {
-      transform: scale(1.05);
-    }
-
-    /* CONTATO */
-    .contact {
-      display: grid;
-      grid-template-columns: 1fr 320px;
-      gap: 18px;
-    }
-
-    form {
-      background: var(--card);
-      padding: 18px;
-      border-radius: 12px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    input, textarea, select {
-      width: 100%;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background-color: #fff;
-      color: #000;
-      font-size: 15px;
-      margin-bottom: 12px;
-    }
-
-    select {
-      appearance: none;
-    }
-
-    button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      width: 100%;
-      padding: 10px 12px;
-      border-radius: 10px;
-      border: none;
-      cursor: pointer;
-      font-weight: 700;
-      color: #fff;
-      background: #25d366;
-      box-shadow: 0 0 10px rgba(37, 211, 102, 0.3);
-      transition: 0.3s;
-    }
-
-    button:hover {
-      transform: scale(1.03);
-      background: #20b957;
-      box-shadow: 0 0 14px rgba(37, 211, 102, 0.4);
-    }
-
-    footer {
-      margin-top: 28px;
-      padding: 18px;
-      border-radius: 12px;
-      text-align: center;
-      color: var(--muted);
-    }
-
-    /* LIGHTBOX */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(2, 6, 23, 0.9);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-      z-index: 999;
-    }
-
-    .lightbox.open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    }
-
-    /* RESPONSIVIDADE */
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; }
-      .contact { grid-template-columns: 1fr; }
-      nav { display: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+<header>
+  <div class="container nav">
+
+    <h1 class="logo">
+      <img src="assets/logo.jpg" alt="Logo M3energiza">
+      <span>M3energiza</span>
+    </h1>
+
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="inicio">
+
+  <div class="container hero-content">
+
+    <div class="hero-text">
+
+      <h2>
+        Serviços Elétricos Residenciais com Segurança e Qualidade
+      </h2>
+
+      <p>
+        Instalações, manutenção, troca de disjuntores,
+        chuveiros, tomadas, iluminação e muito mais.
+      </p>
+
+      <a
+        href="https://wa.me/5511998680448?text=Olá,%20gostaria%20de%20um%20orçamento"
+        target="_blank"
+        class="btn"
+      >
+        Solicitar Orçamento
+      </a>
+
+    </div>
+
+    <div class="hero-image">
+      <img src="assets/imagem pincipal.png" alt="Eletricista trabalhando">
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SERVIÇOS -->
+
+<section class="services" id="servicos">
+
   <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo">
-          <img src="./assets/logo.jpg" alt="Logotipo M3 ENERGIZA">
-        </div>
-        <div class="brand-text">
-          <h1>M3 ENERGIZA</h1>
-          <div>Eletricista residencial & comercial</div>
-        </div>
+
+    <h2 class="section-title">Nossos Serviços</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>🔌 Instalação Elétrica</h3>
+        <p>Instalação completa para casas e apartamentos.</p>
       </div>
 
-      <div class="contact-buttons">
-        <a class="btn-wpp" href="https://wa.me/5511998680448" target="_blank" rel="noopener">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="18" height="18" fill="currentColor">
-            <path d="M16 .3C7.3.3.3 7.3.3 16c0 2.8.7 5.4 2 7.8L0 32l8.5-2.2c2.3 1.3 4.9 2 7.5 2 8.7 0 15.7-7 15.7-15.7S24.7.3 16 .3zm0 28.6c-2.3 0-4.5-.6-6.5-1.7l-.5-.3-5 1.3 1.3-4.8-.3-.5c-1.3-2.1-2-4.4-2-6.8C3 8.6 8.8 3 16 3s13 5.6 13 13c0 7.3-5.7 12.9-13 12.9z"/>
-            <path d="M24 19.3c-.4-.2-2.3-1.1-2.7-1.3-.4-.2-.7-.2-1 .2s-1.1 1.3-1.3 1.6c-.2.3-.5.3-.9.1-.4-.2-1.5-.6-2.8-1.8-1-1-1.8-2.2-2-2.6-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.8.2-.3.3-.5.4-.8.1-.3 0-.6 0-.8s-1-2.4-1.3-3.3c-.3-.9-.7-.8-1-.8h-.9c-.3 0-.8.1-1.2.6s-1.5 1.5-1.5 3.6 1.6 4.2 1.8 4.5c.2.3 3 4.6 7.3 6.5 1 .4 1.8.7 2.4.9 1 .3 1.9.3 2.6.2.8-.1 2.3-.9 2.6-1.7.3-.8.3-1.6.2-1.8-.1-.2-.4-.3-.8-.5z"/>
-          </svg>
-          WhatsApp
-        </a>
+      <div class="card">
+        <h3>💡 Iluminação</h3>
+        <p>Troca e instalação de luminárias, spots e LEDs.</p>
       </div>
 
-      <nav aria-label="Menu principal">
-        <a href="#servicos">Serviços</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#contato" class="cta">Contato</a>
-      </nav>
-    </header>
-    <main>
-      <!-- HERO -->
-      <section class="hero">
-        <div class="hero-card">
-          <h2>Instalações elétricas seguras e eficientes</h2>
-          <p>Atendimento residencial e comercial — manutenção, reformas, quadro de iluminação, projetos e automação básica.</p>
+      <div class="card">
+        <h3>🚿 Chuveiros</h3>
+        <p>Instalação de chuveiros elétricos.</p>
+      </div>
 
-          <div class="features">
-            <div class="feat"><strong>Atendimento rápido</strong><br><span style="font-size:13px;color:var(--muted)">Agendamento em até 48h</span></div>
-            <div class="feat"><strong>Garantia</strong><br><span style="font-size:13px;color:var(--muted)">3 meses de garantia</span></div>
-            <div class="feat"><strong>Orçamento grátis</strong></div>
-          </div>
+      <div class="card">
+        <h3>⚙️ Manutenção</h3>
+        <p>
+          Correção de curtos,
+          troca de tomadas queimadas e disjuntores.
+        </p>
+      </div>
 
-          <a href="#contato" class="cta" style="margin-top:16px;display:inline-block;">Peça um orçamento</a>
-        </div>
+      <div class="card">
+        <h3>🏠 Reforma Residencial</h3>
+        <p>Atualização completa da instalação elétrica.</p>
+      </div>
 
-        <aside style="background:var(--card);padding:18px;border-radius:12px;text-align:center;">
-          <div class="badge">Serviço em destaque</div>
-          <h3 style="margin-top:12px">Eletricista Instalador</h3>
-          <p style="color:var(--muted);font-size:14px;margin-top:10px;">📞 (11) 9 9868-0448<br>✉️ mailsom.mota@gmail.com</p>
-        </aside>
-      </section>
+      <div class="card">
+        <h3>📋 Orçamentos</h3>
+        <p>Visita técnica no local.</p>
+      </div>
 
-      <!-- SERVIÇOS -->
-      <section id="servicos">
-        <h2>Serviços</h2>
-        <div class="services">
-          <article class="service"><h3>Residencial</h3><p>Instalações, tomadas, iluminação, aterramento e manutenção emergencial.</p></article>
-          <article class="service"><h3>Comercial</h3><p>Instalações para lojas e escritórios, quadros elétricos.</p></article>
-          <article class="service"><h3>Projetos</h3><p>Dimensionamento de circuitos, disjuntores e projetos elétricos personalizados.</p></article>
-          <article class="service"><h3>Automação</h3><p>Instalação de controles, sensores e integração com assistentes.</p></article>
-        </div>
-      </section>
+    </div>
 
-      <!-- GALERIA -->
-      <section id="projetos">
-        <h2>Projetos e Galeria</h2>
-        <div class="gallery">
-          <div class="thumb" onclick="openLightbox(0)"><img src="assets/QDC.jpg" alt="Projeto 1"></div>
-          <div class="thumb" onclick="openLightbox(1)"><img src="assets/QDC 2.jpg" alt="Projeto 2"></div>
-          <div class="thumb" onclick="openLightbox(2)"><img src="assets/QDC 3.jpg" alt="Projeto 3"></div>
-          <div class="thumb" onclick="openLightbox(3)"><img src="assets/Tomada.jpeg" alt="Projeto 4"></div>
-        </div>
-      </section>
-
-      <!-- SOBRE -->
-      <section id="sobre">
-        <h2>Sobre</h2>
-        <div style="background:var(--card);padding:16px;border-radius:12px;color:var(--muted)">
-          <p>Profissional qualificado com experiência em instalações residenciais e comerciais. Foco em segurança, eficiência e atendimento personalizado.</p>
-          <ul style="margin-top:8px;">
-            <li>Atendimento rápido</li>
-            <li>Orçamentos transparentes</li>
-            <li>Garantia em todos os serviços</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- CONTATO -->
-      <section id="contato">
-        <h2>Contato</h2>
-        <div class="contact">
-          <form id="contactForm" onsubmit="enviarWhatsApp(event)">
-            <label for="nome">Nome</label>
-            <input id="nome" name="nome" required>
-
-            <label for="telefone">Telefone</label>
-            <input id="telefone" name="telefone" placeholder="(11) 9 99868-0448">
-
-            <label for="email">E-mail</label>
-            <input id="email" name="email" type="email" required>
-
-            <label for="servico">Serviço</label>
-            <select id="servico" name="servico">
-              <option>Residencial</option>
-              <option>Comercial</option>
-            </select>
-
-            <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem" rows="4" placeholder="Descreva o serviço..."></textarea>
-
-            <button type="submit" class="btn-wpp" style="display:flex;align-items:center;gap:6px;justify-content:center;">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="18" height="18" fill="currentColor">
-    <path d="M16 .3C7.3.3.3 7.3.3 16c0 2.8.7 5.4 2 7.8L0 32l8.5-2.2c2.3 1.3 4.9 2 7.5 2 8.7 0 15.7-7 15.7-15.7S24.7.3 16 .3zm0 28.6c-2.3 0-4.5-.6-6.5-1.7l-.5-.3-5 1.3 1.3-4.8-.3-.5c-1.3-2.1-2-4.4-2-6.8C3 8.6 8.8 3 16 3s13 5.6 13 13c0 7.3-5.7 12.9-13 12.9z"/>
-    <path d="M24 19.3c-.4-.2-2.3-1.1-2.7-1.3-.4-.2-.7-.2-1 .2s-1.1 1.3-1.3 1.6c-.2.3-.5.3-.9.1-.4-.2-1.5-.6-2.8-1.8-1-1-1.8-2.2-2-2.6-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.8.2-.3.3-.5.4-.8.1-.3 0-.6 0-.8s-1-2.4-1.3-3.3c-.3-.9-.7-.8-1-.8h-.9c-.3 0-.8.1-1.2.6s-1.5 1.5-1.5 3.6 1.6 4.2 1.8 4.5c.2.3 3 4.6 7.3 6.5 1 .4 1.8.7 2.4.9 1 .3 1.9.3 2.6.2.8-.1 2.3-.9 2.6-1.7.3-.8.3-1.6.2-1.8-.1-.2-.4-.3-.8-.5z"/>
-  </svg>
-  WhatsApp
-</button>
-       </form>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      © <span id="year"></span> M3 ENERGIZA — Todos os direitos reservados
-    </footer>
   </div>
 
-  <!-- LIGHTBOX -->
-  <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true" onclick="closeLightbox()">
-    <img id="lightboxImg" alt="Imagem ampliada">
+</section>
+
+<!-- PROJETOS -->
+
+<section class="projects" id="projetos">
+
+  <div class="container">
+
+    <h2 class="section-title">Projetos Concluídos</h2>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+
+        <img src="assets/Pinheiros.jpeg" alt="Projeto Elétrico Pinheiros">
+
+        <div class="project-info">
+
+          <h3>Reforma elétrica de apartamento</h3>
+
+          <p>
+            Reforma completa da instalação elétrica em apartamento.
+          </p>
+
+          <span class="local-projeto">
+            📍 Pinheiros - SP
+          </span>
+
+        </div>
+
+      </div>
+
+      <div class="project-card">
+
+        <img src="assets/QDC Rua Honduras 56.jpeg" alt="Projeto Rua Honduras">
+
+        <div class="project-info">
+
+          <h3>Reforma Elétrica</h3>
+
+          <p>
+            Reforma completa da instalação elétrica em residência.
+          </p>
+
+          <span class="local-projeto">
+            📍 Rua Honduras 56 - SP
+          </span>
+
+        </div>
+
+      </div>
+
+      <div class="project-card">
+
+        <img src="assets/Pirituba.jpeg" alt="Projeto iluminação Pirituba">
+
+        <div class="project-info">
+
+          <h3>Reforma elétrica de galpão</h3>
+
+          <p>
+            Reforma completa da instalação elétrica em galpão.
+          </p>
+
+          <span class="local-projeto">
+            📍 Pirituba - SP
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 
-  <script>
-    const gallery = [
-      'assets/QDC.jpg',
-      'assets/QDC 2.jpg',
-      'assets/QDC 3.jpg',
-      'assets/Tomada.jpeg'
-    ];
+</section>
 
-    function openLightbox(i) {
-      const lb = document.getElementById('lightbox');
-      const img = document.getElementById('lightboxImg');
-      img.src = gallery[i] || gallery[0];
-      lb.classList.add('open');
-      lb.setAttribute('aria-hidden', 'false');
-    }
+<!-- SOBRE -->
 
-    function closeLightbox() {
-      const lb = document.getElementById('lightbox');
-      lb.classList.remove('open');
-      lb.setAttribute('aria-hidden', 'true');
-    }
+<section class="about" id="sobre">
 
-    function enviarWhatsApp(e) {
+  <div class="container about-content">
+
+    <div>
+      <img
+        src="assets/tela principal.jpeg"
+        alt="Equipe elétrica"
+      >
+    </div>
+
+    <div>
+
+      <h2>Sobre Nós</h2>
+
+      <p>
+        Trabalhamos com serviços elétricos residenciais,
+        oferecendo qualidade, segurança e compromisso.
+      </p>
+
+      <p>
+        Atendimento rápido, preços justos e garantia nos serviços realizados.
+      </p>
+
+      <ul>
+        <li>✔ Atendimento Residencial</li>
+        <li>✔ Profissional Qualificado</li>
+        <li>✔ Serviço Garantido</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTATO -->
+
+<section class="contact" id="contato">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      Solicite um Orçamento
+    </h2>
+
+    <form id="formContato">
+
+      <input
+        type="text"
+        id="nome"
+        placeholder="Seu nome"
+        required
+      >
+
+      <input
+        type="tel"
+        id="telefone"
+        placeholder="Seu telefone"
+        required
+      >
+
+      <input
+        type="email"
+        id="email"
+        placeholder="Seu e-mail"
+        required
+      >
+
+      <textarea
+        id="mensagem"
+        rows="5"
+        placeholder="Descreva o serviço"
+        required
+      ></textarea>
+
+      <button type="submit">
+        Enviar no WhatsApp
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+<!-- AVALIAÇÕES -->
+
+<section class="reviews">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      Avaliações dos Clientes
+    </h2>
+
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+
+        <p>
+          Mailson é um ótimo profissional! Resolveu o problema que muitos outros eletricistas não conseguiram resolver aqui em casa! Além do mais foi super honesto com o orçamento podem contratar ele sem medo! Eletricista nota 10.
+        </p>
+
+        <h4>Carlos Henrique de Souza</h4>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+
+        <p>
+          Super recomendo, profissional Mailson muito profissional, podem confiar de olhos fechados.
+        </p>
+
+        <h4>Dalmo Borges</h4>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+
+        <p>
+          Excelente profissional,recomendo
+        </p>
+
+        <h4>Crisavi Barbosa</h4>
+      </div>
+
+    </div>
+
+    <a
+      href="https://share.google/kfUNA8luvSRmoq8XY"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-review"
+    >
+      ⭐ Ver avaliações no Google
+    </a>
+
+  </div>
+
+</section>
+
+<!-- BOTÃO WHATSAPP -->
+
+<a
+  href="https://wa.me/5511998680448?text=Olá,%20gostaria%20de%20um%20orçamento"
+  class="whatsapp-float"
+  target="_blank"
+>
+  📞
+</a>
+
+<!-- RODAPÉ -->
+
+<footer>
+
+  <div class="container">
+    <p>© 2026 M3energiza - Todos os direitos reservados.</p>
+  </div>
+
+</footer>
+
+<!-- SCRIPT -->
+
+<script>
+
+const form = document.getElementById('formContato');
+
+form.addEventListener('submit', function(e) {
+
   e.preventDefault();
 
   const nome = document.getElementById('nome').value.trim();
+
   const telefone = document.getElementById('telefone').value.trim();
-  const servico = document.getElementById('servico').value;
+
+  const email = document.getElementById('email').value.trim();
+
   const mensagem = document.getElementById('mensagem').value.trim();
+
+  const texto =
+`Olá, me chamo ${nome}
+
+📞 Telefone: ${telefone}
+
+📧 E-mail: ${email}
+
+🛠 Serviço:
+${mensagem}`;
+
   const numero = '5511998680448';
 
-  // Monta o texto com quebras de linha reais (\n) e depois codifica
-  const texto = `Olá, sou ${nome}!\n` +
-                `Telefone: ${telefone || 'não informado'}\n` +
-                `Serviço: ${servico}\n` +
-                `Mensagem: ${mensagem || '—'}`;
+  const url =
+`https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
 
-  const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
   window.open(url, '_blank');
 
-  e.target.reset();
-}
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+});
+
+</script>
+
 </body>
 </html>
-
