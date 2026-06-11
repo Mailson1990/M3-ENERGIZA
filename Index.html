@@ -57,42 +57,7 @@
         Instalações, manutenção, troca de disjuntores,
         chuveiros, tomadas, iluminação e muito mais.
       </p>
-
-      <!-- INFORMAÇÕES DE CONTATO -->
-
-      <div class="contact-info">
-
-        <h3>Entre em Contato</h3>
-
-        <p>
-          📞 Telefone:
-          <a href="tel:+5511998680448">
-            (11) 99868-0448
-          </a>
-        </p>
-
-        <p>
-          💬 WhatsApp:
-          <a
-            href="https://wa.me/5511998680448"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Chamar no WhatsApp
-          </a>
-        </p>
-
-        <p>
-          📧 E-mail:
-          <a href="mailto:contato@m3energiza.com.br">
-            mailsom.mota@gmail.com
-          </a>
-        </p>
-
-      </div>
-
-    </div>
-
+      
     <!-- IMAGEM -->
 
     <div class="hero-image">
@@ -189,7 +154,7 @@
 
       <div class="project-card">
 
-        <img src="assets/QDC Rua Honduras 56.jpeg" alt="Projeto Rua Honduras">
+        <img src="assets/Jardins.png" alt="Projeto Rua Honduras">
 
         <div class="project-info">
 
@@ -388,43 +353,34 @@
 </footer>
 
 <!-- SCRIPT -->
+<script src="script.js"></script>
 
-<script>
+<div class="social-floating">
 
-const form = document.getElementById('formContato');
+  <a href="https://instagram.com/m3energiza"
+     target="_blank"
+     rel="noopener noreferrer">
 
-form.addEventListener('submit', function(e) {
+    <img src="assets/Instagram-m3.png" alt="Instagram">
 
-  e.preventDefault();
+  </a>
 
-  const nome = document.getElementById('nome').value.trim();
+  <a href="https://facebook.com/m3energiza"
+     target="_blank"
+     rel="noopener noreferrer">
 
-  const telefone = document.getElementById('telefone').value.trim();
+    <img src="assets/face-m3.png" alt="Facebook">
 
-  const email = document.getElementById('email').value.trim();
+  </a>
 
-  const mensagem = document.getElementById('mensagem').value.trim();
+  <a href="https://wa.me/5511998680448"
+   target="_blank">
 
-  const texto =
-`Olá, me chamo ${nome}
+    <img src="assets/wpp.png" alt="WhatsApp">
 
-📞 Telefone: ${telefone}
+</a>
 
-📧 E-mail: ${email}
-
-🛠 Serviço:
-${mensagem}`;
-
-  const numero = '5511998680448';
-
-  const url =
-`https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
-
-  window.open(url, '_blank');
-
-});
-
-</script>
+</div>
 
 </body>
 </html>
